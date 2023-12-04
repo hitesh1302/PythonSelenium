@@ -1,3 +1,5 @@
+from faker import Faker
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -20,7 +22,8 @@ class LoginTestCases(unittest.TestCase):
         driver.get('https://org0.artifex-pwa.integration.edition1.nl/login')
         driver.maximize_window()
         email = driver.find_element(By.ID, "email")
-        email.send_keys("edition1.artifex+admin1@gmail.com")
+        email_id = Faker()
+        email.send_keys(email_id.email())
         password = driver.find_element(By.ID, "password")
         password.send_keys("Pa$$W0rd")
         btn = driver.find_element(By.CLASS_NAME, "ant-btn")
