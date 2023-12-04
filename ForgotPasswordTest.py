@@ -9,6 +9,7 @@ service = Service('C:\\BrowserDriver\\chromedriver_win32\\geckodriver.exe')
 #service = Service('C:\\BrowserDriver\\edgedriver_win64\\msedgedriver.exe')
 
 # Start the WebDriver with the Service object
+# Wait to merge
 
 #driver = webdriver.Chrome(service=service)
 driver = webdriver.Firefox(service=service)
